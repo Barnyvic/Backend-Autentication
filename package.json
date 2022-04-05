@@ -1,0 +1,20 @@
+{
+  "name": "mernbackend",
+  "version": "1.0.0",
+  "description": "Mern stack Backend ",
+  "main": "sever.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "author": "Barny Victor",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.2.9",
+    "nodemon": "^2.0.15"
+  }
+}
