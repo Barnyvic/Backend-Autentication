@@ -7,6 +7,9 @@ const {
   getUser,
 } = require("../controllers/userController");
 
+// importing the auth middleware from the middleware folder
+const { protect } = require("../middleware/authMiddleware");
+
 //  Post request to register a user
 router.post("/", registerUser);
 
@@ -14,6 +17,6 @@ router.post("/", registerUser);
 router.post("/login", loginUser);
 
 // Get request to get a user
-router.get("/me", getUser);
+router.get("/me", protect, getUser);
 
 module.exports = router;

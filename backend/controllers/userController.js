@@ -91,7 +91,7 @@ const generateToken = (id) => {
   //payload
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     //process.env.JWT_SECRET is the secret key
-    expiresIn: process.env.JWT_EXPIRES_IN, //process.env.JWT_EXPIRES_IN is the time in seconds
+    expiresIn: "1h", //process.env.JWT_EXPIRES_IN is the time in seconds
   });
 };
 
