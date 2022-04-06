@@ -1,3 +1,5 @@
+// Middleware is a function that runs in between the request and the response
+
 //import { Request, Response, NextFunction } from 'express';
 const errorHandler = (err, req, res, next) => {
   //status code
