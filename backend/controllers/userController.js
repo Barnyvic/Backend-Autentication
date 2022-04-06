@@ -11,7 +11,7 @@ const Usermodule = require("../models/Usermodule");
 // @access  Private
 const getUser = asyncHandler(async (req, res) => {
   // distructuring the user from the request
-  const { id, user_Name, User_Email } = await Usermodule.findById(
+  const { id, user_Name, User_Email, User_Mobile } = await Usermodule.findById(
     req.user._id
   ).select("-User_Password");
   res.status(200).json({
@@ -21,6 +21,7 @@ const getUser = asyncHandler(async (req, res) => {
     id: id,
     name: user_Name,
     Email: User_Email,
+    mobile: User_Mobile,
   });
 });
 
