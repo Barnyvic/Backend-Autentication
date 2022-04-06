@@ -10,8 +10,17 @@ const Usermodule = require("../models/Usermodule");
 // @route   GET /api/user/me
 // @access  Private
 const getUser = asyncHandler(async (req, res) => {
-  res.json({
-    msg: "User profile",
+  // distructuring the user from the request
+  const { id, user_Name, User_Email } = await Usermodule.findById(
+    req.user._id
+  ).select("-User_Password");
+  res.status(200).json({
+    //200 is the status code for success
+    //id, user_Name, User_Email are the fields of the database
+    success: true,
+    id: id,
+    name: user_Name,
+    Email: User_Email,
   });
 });
 

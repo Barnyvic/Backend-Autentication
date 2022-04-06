@@ -16,7 +16,7 @@ router.post("/", registerUser);
 // Post request to login a user
 router.post("/login", loginUser);
 
-// Get request to get a user
+// Get request to get a user and protect the routes with the auth middleware
 router.get("/me", protect, getUser);
 
 module.exports = router;
